@@ -8,6 +8,7 @@ import Academics from './components/Acadmics/Academics'
 const App = () => {
   return (
     
+    
     <div>
       <Navbar/>
       <Home/>
