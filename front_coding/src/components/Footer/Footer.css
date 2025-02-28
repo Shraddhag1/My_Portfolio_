@@ -1,0 +1,23 @@
+.container{
+    text-align: center;
+    justify-content: center;
+}
+
+p{
+    color: darkblue;
+    font-weight: bold;
+    /* font-style: italic; */
+    font-size: medium;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 550px;
+  padding-right: 550px;
+
+}
+a{
+    height: 20px;
+    width: 20px;
+}

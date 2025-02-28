@@ -1,0 +1,60 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.container{
+    font-family: "Urbanist", sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.heading{
+    font-family: "Urbanist", sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: bold;
+    padding-top: 5%;
+    font-size: larger;
+    
+    
+
+}
+
+.para{
+    font-family: "Urbanist", sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 2;
+    padding: 1.5rem 2rem ;
+
+}
+
+/* Image Styling */
+.profile {
+    width: 250px;       /* Adjust size */
+    height: 250px;
+    border-radius: 50%; /* Makes it circular */
+    margin-top: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .profile:hover {
+    transform: scale(1.1);
+  }
+
+  .img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+
+  }

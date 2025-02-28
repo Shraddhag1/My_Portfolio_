@@ -1,0 +1,18 @@
+/* General Styling */
+.about {
+    /* max-width: 800px; */
+    margin: 50px auto;
+    padding: 8rem;
+    text-align: center;
+    background-color: #cfe4f9;
+    
+  }
+  
+  /* Paragraph Styling */
+  .about p {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  
