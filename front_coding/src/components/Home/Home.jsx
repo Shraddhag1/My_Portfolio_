@@ -9,7 +9,7 @@ const Home = () => {
      </div>
      <div className='para'><p>I design and code beautifully simple things, and I love what I do.</p></div>
      <div className='img'>
-        <img src="/src/assets/profile.jpeg" alt="profile" className='profile' />
+        <img src="profile.jpeg" alt="profile" className='profile' />
      </div>
     </div>
   )
