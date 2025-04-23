@@ -1,15 +1,20 @@
-import React from 'react'
+ import React from 'react'
 import './Home.css'
+import { useSelector } from 'react-redux';
 const Home = () => {
-    
+  const { loading,portfolioData } = useSelector((state)=>state.root);
+  const {intros} =portfolioData;
+  const {description, lottieURL, welcomeText} = intros
+  console.log(description, lottieURL, welcomeText)
+  
   return (
-    <div className='conatiner'>
+    <div className='conatiner' id='Home'>
       <div className='heading'>
-        <h2>Aspiring Developer & Data Analyst | Exploring the Tech World</h2>
+        <h2>{welcomeText}</h2>
      </div>
-     <div className='para'><p>I design and code beautifully simple things, and I love what I do.</p></div>
+     <div className='para'><p>{description}</p></div>
      <div className='img'>
-        <img src="/src/assets/profile.jpeg" alt="profile" className='profile' />
+        <img src={`${lottieURL}`} alt="profile" className='profile' />
      </div>
     </div>
   )

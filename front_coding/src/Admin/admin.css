@@ -1,0 +1,21 @@
+input,textarea{
+    height: 40px;
+    border: 1px solid gray;
+    width: 100%;
+    padding-left: 25px ;
+
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid rgb(40, 40, 40);
+}
+
+textarea{
+    height: 100px;
+    padding-top: 10px;
+}
+
+#skillbtn{
+    align-items:;
+} 
