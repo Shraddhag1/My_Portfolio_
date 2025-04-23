@@ -11,7 +11,6 @@ import Projects from './components/Projects/Projects'
 import Login from './components/Login/Login'
 import { useDispatch, useSelector } from 'react-redux';
 import { SetPortfolioData } from './redux/rootSlice';
-import './App.css'
 import Admin from './Admin/Home';
 
 // require('dotenv').config();
