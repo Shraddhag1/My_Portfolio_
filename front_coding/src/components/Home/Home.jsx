@@ -17,7 +17,7 @@ const Home = () => {
 
         <img src={`${lottieURL}`} alt="profile" className='profile' />
 
-        <img src="profile.jpeg" alt="profile" className='profile' />
+       
 
      </div>
     </div>
