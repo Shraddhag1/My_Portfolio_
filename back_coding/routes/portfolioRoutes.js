@@ -1,9 +1,15 @@
 const router = require('express').Router();
 const { Router } = require('express');
-const{Intros,About,Education,Project} = require('../models/portfolioModel');
+const{Intros,About,Education,Project,User} = require('../models/portfolioModel');
 const mongoose=require('mongoose');
 const { PiProjectorScreenChartBold, PiProjectorScreenChartFill } = require('react-icons/pi');
+require('dotenv').config();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
+
+
+const AppError=require('../util/appError.jsx')
 // get all portfolio data
 router.get('/get-portfolio-data', async(req,res)=>{
     try {
@@ -240,7 +246,45 @@ router.post("/delete-project", async (req, res) => {
     }
   });
   
+//user login
+router.post('/login', async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
 
+    console.log("Incoming login request:", req.body); // Debug log
+
+    if (!username || !password) {
+      return next(new AppError('Username and password are required', 400));
+    }
+
+    // Case-insensitive, trimmed lookup
+    const user = await User.findOne({ username: username }); 
+
+    console.log("User from DB:", user); // 👈 Log what comes from DB
+
+    if (!user) return next(new AppError('User not found', 404));
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) return next(new AppError('Invalid credentials', 401));
+
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
+
+    res.status(200).json({
+      status: 'success',
+      message: 'User logged in successfully',
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+      },
+    });
+
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 module.exports = router;
