@@ -18,12 +18,12 @@ const AdminProject = () => {
       let response;
 
       if (selectedItemForEdit) {
-        response = await axios.post('http://localhost:8000/api/portfolio/update-project', {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-project`, {
           ...values,
           id: selectedItemForEdit._id,
         });
       } else {
-        response = await axios.post('http://localhost:8000/api/portfolio/add-project', values);
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/add-project`, values);
       }
 
 
