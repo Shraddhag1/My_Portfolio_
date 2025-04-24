@@ -44,7 +44,7 @@ const AdminProject = () => {
   const deleteProject = async (id) => {
     try {
       
-      const response = await axios.post('http://localhost:8000/api/portfolio/delete-project', { id });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/delete-project`, { id });
 
 
       if (response.data.success) {

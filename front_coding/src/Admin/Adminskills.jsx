@@ -14,7 +14,7 @@ const Adminskills = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/portfolio/add-skills", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/add-skills`, {
         skill: values.name,
         _id: education?.[0]?._id,
         skills: [values.name], // assuming you want to send an array

@@ -13,7 +13,7 @@ const AdminAbout = () => {
     const onFinish = async (values) => {
         console.log(values)
         try {
-            const response = await axios.post("http://localhost:8000/api/portfolio/update-about", {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-about`, {
                 ...values,
                 _id : portfolioData?.about._id,
             });
