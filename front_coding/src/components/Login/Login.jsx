@@ -2,30 +2,32 @@ import React, { useState } from 'react';
 import './Login.css';
 import axios from 'axios';
 import { message } from 'antd';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();  // Hook for navigation
 
   const onFinish = async (e) => {
     e.preventDefault(); // prevent default HTML form submission
     try {
-      const res = await axios.post(apiUrl+`/api/portfolio/login`, {
+      const res = await axios.post(apiUrl + `/api/portfolio/login`, {
         username,
         password,
       });
 
       if (res.data.status === 'success') {
         message.success(res.data.message);
-        localStorage.setItem("token", res.data.token);
-        
+        localStorage.setItem('token', res.data.token);
+        navigate('/admin'); // Navigate to /admin route programmatically
       } else {
         message.error(res.data.message);
       }
     } catch (error) {
-      message.error(error.response?.data?.message || "Login failed");
+      message.error(error.response?.data?.message || 'Login failed');
     }
   };
 

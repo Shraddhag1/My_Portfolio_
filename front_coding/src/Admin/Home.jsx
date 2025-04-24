@@ -10,7 +10,7 @@ const Admin = () => {
   
     const {portfolioData} = useSelector((state)=> state.root);
   return (
-    <div id='Admin'>
+    <div id='admin'>
       {portfolioData && <div className='mt-5 p-5'>
       <Tabs
     defaultActiveKey="1"
