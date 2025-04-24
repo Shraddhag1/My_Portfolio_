@@ -20,7 +20,7 @@ const Login = () => {
       if (res.data.status === 'success') {
         message.success(res.data.message);
         localStorage.setItem("token", res.data.token);
-        window.location.href = "/admin"; // redirect
+        
       } else {
         message.error(res.data.message);
       }
