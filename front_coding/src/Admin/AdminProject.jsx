@@ -4,6 +4,7 @@ import { Form, Input, Modal, message,Button } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const AdminProject = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,12 @@ const AdminProject = () => {
       let response;
 
       if (selectedItemForEdit) {
-        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-project`, {
+        response = await axios.post(apiUrl+`/api/portfolio/update-project`, {
           ...values,
           id: selectedItemForEdit._id,
         });
       } else {
-        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/add-project`, values);
+        response = await axios.post(apiUrl+`/api/portfolio/add-project`, values);
       }
 
 
@@ -44,7 +45,7 @@ const AdminProject = () => {
   const deleteProject = async (id) => {
     try {
       
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/delete-project`, { id });
+      const response = await axios.post(apiUrl+`/api/portfolio/delete-project`, { id });
 
 
       if (response.data.success) {

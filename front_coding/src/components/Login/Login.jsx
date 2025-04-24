@@ -11,7 +11,7 @@ const Login = () => {
   const onFinish = async (e) => {
     e.preventDefault(); // prevent default HTML form submission
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/login`, {
+      const res = await axios.post(apiUrl+`/api/portfolio/login`, {
         username,
         password,
       });

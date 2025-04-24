@@ -4,6 +4,7 @@ import './admin.css'
 import { useDispatch, useSelector } from 'react-redux';
 import axios from "axios";
 import { message } from 'antd';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const AdminIntro = () => {
     // const dispatch= useDispatch();
@@ -13,7 +14,7 @@ const AdminIntro = () => {
     const onFinish = async (values) => {
         console.log(values)
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-intro`, {
+            const response = await axios.post(apiUrl+`/api/portfolio/update-intro`, {
                 ...values,
                 _id : portfolioData?.intros._id,
                 

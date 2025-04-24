@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './admin.css';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Adminskills = () => {
   const { loading, portfolioData } = useSelector((state) => state.root);
@@ -14,7 +15,7 @@ const Adminskills = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/add-skills`, {
+      const response = await axios.post(apiUrl+`api/portfolio/add-skills`, {
         skill: values.name,
         _id: education?.[0]?._id,
         skills: [values.name], // assuming you want to send an array
