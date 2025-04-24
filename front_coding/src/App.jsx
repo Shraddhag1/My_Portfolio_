@@ -44,7 +44,7 @@ const App = () => {
     {loading ? <Loader /> :null}
       <Routes>
         <Route path="/Login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/Admin" element={<Admin />} />
         <Route path="/" element={
           <div>
             {portfolioData && (<div>
