@@ -3,6 +3,7 @@ import './Login.css';
 import axios from 'axios';
 import { message } from 'antd';
 import { Link as RouterLink } from 'react-router-dom';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const [username, setUsername] = useState('');
